@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb9c12a8c6c949f7af83a3d238359d0, type: 3}
+  m_Name: vFolders Data
+  m_EditorClassIdentifier: VFolders::VFolders.VFoldersData
+  folderDatas_byGuid:
+    keys:
+    - b1b59d4b288111e4cb4fbae4ae9dc31d
+    - a3412a4b1444818469ef41d16c2a1f31
+    - ac0e5fb6bbcc885418f66d4b73064d74
+    - 7d85bc3ba30cb9245a8c6b37a795b12b
+    - e0c7e351c9881dc41bab2a98109687a8
+    - fb1cf90a08e4ad348b50c1e11d15d058
+    - 41a496e51a518704bba4c33ca6991bf4
+    values:
+    - iconNameOrGuid: none
+      colorIndex: 1
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: 
+      colorIndex: 2
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: 
+      colorIndex: 3
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: 
+      colorIndex: 4
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: 
+      colorIndex: 5
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: 
+      colorIndex: 7
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: 
+      colorIndex: 8
+      isIconRecursive: 0
+      isColorRecursive: 1
+  bookmarks:
+  - guid: 41a496e51a518704bba4c33ca6991bf4
+  - guid: e2788f71d6c920d42be9f8861099be13
+  - guid: e0c7e351c9881dc41bab2a98109687a8
+  - guid: a3412a4b1444818469ef41d16c2a1f31
