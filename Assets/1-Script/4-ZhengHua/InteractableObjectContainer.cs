@@ -4,8 +4,10 @@ namespace ZhengHua
 {
     public class InteractableObjectContainer : MonoBehaviour
     {
+        [SerializeField] private StageManager stageManager;
         public void Show()
         {
+            stageManager?.StageInit();
             gameObject.SetActive(true);
         }
         

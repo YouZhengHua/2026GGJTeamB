@@ -94,7 +94,7 @@ public class MaskSelectCanvas : MonoBehaviour
             MyAnimatorActive(); 
         }
 
-        Debug.Log(Input.mousePosition);
+        // Debug.Log(Input.mousePosition);
     }
 
     public void Do_OtherThing()
