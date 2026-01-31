@@ -254,10 +254,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 719583826352386406, guid: 467f53e150f21094987bb13127267407, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1014881236640624729, guid: 467f53e150f21094987bb13127267407, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -298,29 +294,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4273575703708622292, guid: 467f53e150f21094987bb13127267407, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5030820463634765635, guid: 467f53e150f21094987bb13127267407, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5348233310952966291, guid: 467f53e150f21094987bb13127267407, type: 3}
       propertyPath: m_Name
       value: InteractableManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8078883337810813690, guid: 467f53e150f21094987bb13127267407, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8091610804756090974, guid: 467f53e150f21094987bb13127267407, type: 3}
-      propertyPath: startPos
-      value: 
-      objectReference: {fileID: 419226750}
-    - target: {fileID: 8609115368274042052, guid: 467f53e150f21094987bb13127267407, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -597,11 +573,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372795365}
   m_CullTransparentMesh: 1
---- !u!4 &419226750 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3012523458932786414, guid: 467f53e150f21094987bb13127267407, type: 3}
-  m_PrefabInstance: {fileID: 193878555}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &426161579
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,10 +851,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f15710255828da45a9f3a62b690b513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  isMaskA_active: 1
+  isMaskA_active: 0
   isMaskB_active: 0
   isMaskC_active: 0
-  isMaskD_active: 0
+  isMaskD_active: 1
   isMaskE_active: 0
   isMaskF_active: 0
 --- !u!114 &849022700 stripped

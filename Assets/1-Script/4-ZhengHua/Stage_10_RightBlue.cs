@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace ZhengHua
 {
-    public class MaskAStage : StageManager
+    public class Stage_10_RightBlue : StageManager
     {
-        private bool haveMaskB = false;
+        private bool haveKey02 = false;
 
-        [SerializeField] private GameObject maskB;
+        [SerializeField] private GameObject key02;
         [SerializeField] private GameObject fishingRod;
 
         [SerializeField] private Transform startPos;
@@ -30,9 +30,9 @@ namespace ZhengHua
             isFishing = false;
             
             // 還未拿到碎片 B 重置碎片位置。
-            if (haveMaskB == false)
+            if (haveKey02 == false)
             {
-                maskB.transform.position = startPos.position;
+                key02.transform.position = startPos.position;
             }
             
             fishingRod.transform.localRotation = Quaternion.identity;
@@ -45,7 +45,7 @@ namespace ZhengHua
             
             var fishingRodShake = fishingRod.transform.DOShakePosition(1f, new Vector3(0.2f, 0.2f, 0), 20, 90f);
             fishingRodShake.Pause();
-            if (haveMaskB)
+            if (haveKey02)
             {
                 fishingRodShake.Play();
                 return;
@@ -53,11 +53,11 @@ namespace ZhengHua
             isFishing = true;
                 
             var sequence = DOTween.Sequence();
-            var maskBTween = maskB.transform.DOMove(gotPos.position, 0.5f);
+            var maskBTween = key02.transform.DOMove(gotPos.position, 0.5f);
             maskBTween.SetEase(Ease.OutBack);
             maskBTween.Pause();
             
-            var fishingRodUp = fishingRod.transform.DOLocalRotate(new Vector3(0f, 0f, 30f), 0.3f);
+            var fishingRodUp = fishingRod.transform.DOLocalRotate(new Vector3(0f, 0f, -30f), 0.3f);
             fishingRodUp.Pause();
             
             sequence.Append(fishingRodShake);
@@ -70,13 +70,13 @@ namespace ZhengHua
 
         public void OnMaskBObjectClick()
         {
-            var maskBGotTween = maskB.transform.DOMove(endPos.position, 1f);
+            var maskBGotTween = key02.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
-                haveMaskB = true;
+                haveKey02 = true;
                 if (gameManager != null)
                 {
-                    gameManager.isMaskB_active = true;
+                    gameManager.isMaskC_active = true;
                 }
             };
         }
