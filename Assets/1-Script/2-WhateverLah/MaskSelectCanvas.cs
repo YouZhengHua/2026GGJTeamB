@@ -69,11 +69,34 @@ public class MaskSelectCanvas : MonoBehaviour
     public UnityEvent MaskF_Event_Uninstall_Start;
     public UnityEvent MaskF_Event_Uninstall_End;
 
+    public RectTransform Larger_Y_Extend;
+
+    void Update()
+    {
+        detectMouse();
+    }
     public void MyAnimatorActive()
     {
-        isMaskCanvasActive = true;
+        //isMaskCanvasActive = ;
         maskCanvasAnimator.SetBool("isActive", isMaskCanvasActive);
     }
+    
+    public void detectMouse()
+    {
+        if (Input.mousePosition.y > Larger_Y_Extend.anchoredPosition.y)
+        {
+            isMaskCanvasActive = true;
+            MyAnimatorActive();
+        }
+        else
+        {
+            isMaskCanvasActive = false;
+            MyAnimatorActive(); 
+        }
+
+        Debug.Log(Input.mousePosition);
+    }
+
     public void Do_OtherThing()
     {
         isMaskCanvasActive = false;
@@ -199,7 +222,7 @@ public class MaskSelectCanvas : MonoBehaviour
             StartEvent.Invoke();
             if (isLeft)
             {
-                MakeMaskInstall_L(maskImage, Un_StartEvent, Un_EndEvent);
+                MakeMaskInstall_L(maskImage, StartEvent, EndEvent);
             }
             else
             {
