@@ -161,7 +161,10 @@ public class MaskSelectCanvas : MonoBehaviour
     {
         is_L_MaskClog = true;
         on_L_GameObject = mask.gameObject;
+
         L_Flag = current_L_Flag;
+        //current_L_Flag = L_Flag;
+
         current_L_Image = mask;
         current_L_Index = myIndex;
         current_L_OriPos = oriPos;
@@ -173,7 +176,10 @@ public class MaskSelectCanvas : MonoBehaviour
     {
         is_R_MaskClog = true;
         on_R_GameObject = mask.gameObject;
+
         R_Flag = current_R_Flag;
+        //current_R_Flag = R_Flag;
+
         current_R_Image = mask;
         current_R_Index = myIndex;
         current_R_OriPos = oriPos;
@@ -274,7 +280,7 @@ public class MaskSelectCanvas : MonoBehaviour
         if (judgeTargetBool == false)
         {
             //Allow anyway
-
+            Debug.Log("正常開啟Control flag");
             ControlFlag = true;
             StartEvent.Invoke();
             if (isLeft)
@@ -292,6 +298,7 @@ public class MaskSelectCanvas : MonoBehaviour
             Debug.Log("CLOG unInstall");
             if (ControlFlag == true)
             {
+                Debug.Log("正常 unInstall");
                 MakeMaskUninstall(maskImage, oriPos, isLeft, Un_StartEvent, Un_EndEvent);
                 ControlFlag = false;
             }
