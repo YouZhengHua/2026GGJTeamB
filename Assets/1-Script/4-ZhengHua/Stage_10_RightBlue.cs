@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace ZhengHua
 {
+    /// <summary>
+    /// 流程一 左藍
+    /// 點擊於魚竿釣出碎片左紅 key02
+    /// </summary>
     public class Stage_10_RightBlue : StageManager
     {
         private bool haveKey02 = false;
@@ -38,7 +42,7 @@ namespace ZhengHua
             fishingRod.transform.localRotation = Quaternion.identity;
         }
 
-        public void GetMaskB()
+        public void FindKey02()
         {
             if (isFishing)
                 return;
@@ -68,7 +72,7 @@ namespace ZhengHua
             maskBTween.Pause();
         }
 
-        public void OnMaskBObjectClick()
+        public void OnKey02ObjectClick()
         {
             var maskBGotTween = key02.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
