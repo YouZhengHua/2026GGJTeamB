@@ -10,12 +10,17 @@ namespace ZhengHua
         {
             // 檢查是否點擊左鍵
             if (!Mouse.current.leftButton.wasPressedThisFrame)
+            {
                 return;
+            }
             
             // 檢查是否點擊到 UI
             if (EventSystem.current.IsPointerOverGameObject())
+            {
+                Debug.Log("點擊到UI");
                 return;
-            
+            }
+
             // 射線檢查是否有碰觸到可互動物件
             if(Physics.Raycast(Camera.main.ScreenPointToRay(Mouse.current.position.value), out var hit))
             {
