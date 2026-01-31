@@ -130,7 +130,7 @@ public class MaskSelectCanvas : MonoBehaviour
         mask.rectTransform.DOAnchorPosX(R_Mask_ArchRect.anchoredPosition.x, 0.6f);
     }
 
-    public void MakeMaskUninstall(Image mask, Vector2 MaskOriPos, bool isLeft, UnityEvent endEvent)
+    public void MakeMaskUninstall(Image mask, Vector2 MaskOriPos, bool isLeft, UnityEvent startEvent, UnityEvent endEvent)
     {
         if (isLeft)
         {
@@ -140,6 +140,7 @@ public class MaskSelectCanvas : MonoBehaviour
         {
             is_R_MaskClog = false;
         }
+        startEvent.Invoke();
         Delay(() => { endEvent.Invoke(); }, 0.6f);
         mask.rectTransform.DOAnchorPosX(MaskOriPos.x, 0.6f);
     }
@@ -226,7 +227,7 @@ public class MaskSelectCanvas : MonoBehaviour
             }
             else
             {
-                MakeMaskInstall_R(maskImage, Un_StartEvent, Un_EndEvent);
+                MakeMaskInstall_R(maskImage, StartEvent, EndEvent);
             }
             
         }
@@ -235,7 +236,7 @@ public class MaskSelectCanvas : MonoBehaviour
             Debug.Log("unInstall");
             if (ControlFlag == true)
             {
-                MakeMaskUninstall(maskImage, oriPos, isLeft, EndEvent);
+                MakeMaskUninstall(maskImage, oriPos, isLeft, Un_StartEvent, Un_EndEvent);
                 ControlFlag = false;
             }
             else
