@@ -4,10 +4,11 @@ using UnityEngine;
 namespace ZhengHua
 {
     /// <summary>
-    /// 流程一 左藍
+    /// 右藍
+    /// 流程一
     /// 點擊於魚竿釣出碎片左紅 key02
     /// </summary>
-    public class Stage_10_RightBlue : StageManager
+    public class Stage_11_RightBlue : StageManager
     {
         private bool haveKey02 = false;
 

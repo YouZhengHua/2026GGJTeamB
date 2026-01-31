@@ -4,7 +4,8 @@ using UnityEngine;
 namespace ZhengHua
 {
     /// <summary>
-    /// 流程二 左紅
+    /// 左紅
+    /// 流程二
     /// 點擊太陽拉繩釣出碎片左綠 key01
     /// </summary>
     public class Stage_02_LeftRed : StageManager
