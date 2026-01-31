@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6, g: 0.1960784, b: 0.8000001, a: 1}
+  m_Color: {r: 0.6, g: 0.1960784, b: 0.8000001, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8627452, g: 0.07843138, b: 0.2352941, a: 1}
+  m_Color: {r: 0.8627452, g: 0.07843138, b: 0.2352941, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4862745, g: 0.9882354, b: 0, a: 1}
+  m_Color: {r: 0.4862745, g: 0.9882354, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.627451, g: 0.3215686, b: 0.1764706, a: 1}
+  m_Color: {r: 0.627451, g: 0.3215686, b: 0.1764706, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2153,6 +2153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8906b334a2f144b891bdc2e4bee26d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskSelectCanvas
+  gameManager: {fileID: 0}
   isMaskCanvasActive: 0
   maskCanvasAnimator: {fileID: 152914890159055154}
   L_Mask_ArchRect: {fileID: 1289194312281181379}
@@ -2249,6 +2250,12 @@ MonoBehaviour:
   MaskF_Event_Uninstall_End:
     m_PersistentCalls:
       m_Calls: []
+  MaskAShow_Clog: 0
+  MaskBShow_Clog: 0
+  MaskCShow_Clog: 0
+  MaskDShow_Clog: 0
+  MaskEShow_Clog: 0
+  MaskFShow_Clog: 0
   Larger_Y_Extend: {fileID: 4686079233867663243}
 --- !u!95 &152914890159055154
 Animator:
@@ -2411,7 +2418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9627176, b: 0.103773475, a: 1}
+  m_Color: {r: 1, g: 0.9627176, b: 0.103773475, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2565,7 +2572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25148445, g: 0.62037665, b: 0.93207544, a: 1}
+  m_Color: {r: 0.25148445, g: 0.62037665, b: 0.93207544, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
