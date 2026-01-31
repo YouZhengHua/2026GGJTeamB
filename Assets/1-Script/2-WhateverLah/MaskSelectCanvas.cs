@@ -16,8 +16,23 @@ public class MaskSelectCanvas : MonoBehaviour
     public RectTransform L_Mask_ArchRect;
     public RectTransform R_Mask_ArchRect;
 
+    public GameObject on_L_GameObject;
     public bool is_L_MaskClog = false;
+    public bool current_L_Flag;
+    public Image current_L_Image;
+    public Vector2 current_L_OriPos;
+    public UnityEvent current_L_UnStartEvent;
+    public UnityEvent current_L_UnEndEvent;
+    public int current_L_Index;
+
+    public GameObject on_R_GameObject;
     public bool is_R_MaskClog = false;
+    public bool current_R_Flag;
+    public Image current_R_Image;
+    public Vector2 current_R_OriPos;
+    public UnityEvent current_R_UnStartEvent;
+    public UnityEvent current_R_UnEndEvent;
+    public int current_R_Index;
 
     public RectTransform maskA_ArchPos;
     public RectTransform maskB_ArchPos;
@@ -140,19 +155,28 @@ public class MaskSelectCanvas : MonoBehaviour
             Image targetImg = targetImg_P;
             targetImg.DOColor(new Color(targetImg.color.r, targetImg.color.g, targetImg.color.b, 1), 0.5f);
         }
-
     }
 
-    public void MakeMaskInstall_L(Image mask, UnityEvent startEvent,UnityEvent endEvent)
+    public void MakeMaskInstall_L(Image mask, Vector2 oriPos, ref bool L_Flag, UnityEvent startEvent,UnityEvent endEvent, int myIndex)
     {
         is_L_MaskClog = true;
+        on_L_GameObject = mask.gameObject;
+        L_Flag = current_L_Flag;
+        current_L_Image = mask;
+        current_L_Index = myIndex;
+        current_L_OriPos = oriPos;
         startEvent.Invoke();
         Delay(() => { endEvent.Invoke(); }, 0.6f);
         mask.rectTransform.DOAnchorPosX(L_Mask_ArchRect.anchoredPosition.x, 0.6f);
     }
-    public void MakeMaskInstall_R(Image mask, UnityEvent startEvent, UnityEvent endEvent)
+    public void MakeMaskInstall_R(Image mask,Vector2 oriPos, ref bool R_Flag, UnityEvent startEvent, UnityEvent endEvent, int myIndex)
     {
         is_R_MaskClog = true;
+        on_R_GameObject = mask.gameObject;
+        R_Flag = current_R_Flag;
+        current_R_Image = mask;
+        current_R_Index = myIndex;
+        current_R_OriPos = oriPos;
         startEvent.Invoke();
         Delay(() => { endEvent.Invoke(); }, 0.6f);
         mask.rectTransform.DOAnchorPosX(R_Mask_ArchRect.anchoredPosition.x, 0.6f);
@@ -163,10 +187,12 @@ public class MaskSelectCanvas : MonoBehaviour
         if (isLeft)
         {
             is_L_MaskClog = false;
+            on_L_GameObject = null; 
         }
         else
         {
             is_R_MaskClog = false;
+            on_L_GameObject = null;
         }
         startEvent.Invoke();
         Delay(() => { endEvent.Invoke(); }, 0.6f);
@@ -175,7 +201,7 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void MaskA_ButtonClick()
     {
-        MaskButton(gameManager.isMaskA_active, ref isMaskA_Installing, maskA, maskA_ArchPos.anchoredPosition, true, MaskA_Event_Install_Start, MaskA_Event_Install_End, MaskA_Event_Uninstall_Start, MaskA_Event_Uninstall_End);
+        MaskButton(gameManager.isMaskA_active, ref isMaskA_Installing, maskA, maskA_ArchPos.anchoredPosition, true, MaskA_Event_Install_Start, MaskA_Event_Install_End, MaskA_Event_Uninstall_Start, MaskA_Event_Uninstall_End,0);
         if (is_L_MaskClog == false)
         {
             //MaskButton(ref isMaskA_Installing, maskA, maskA_ArchPos.anchoredPosition, true);
@@ -188,7 +214,7 @@ public class MaskSelectCanvas : MonoBehaviour
     }
     public void MaskB_ButtonClick()
     {
-        MaskButton(gameManager.isMaskB_active, ref isMaskB_Installing, maskB, maskB_ArchPos.anchoredPosition, true, MaskB_Event_Install_Start, MaskB_Event_Install_Start, MaskB_Event_Uninstall_Start, MaskB_Event_Uninstall_End);
+        MaskButton(gameManager.isMaskB_active, ref isMaskB_Installing, maskB, maskB_ArchPos.anchoredPosition, true, MaskB_Event_Install_Start, MaskB_Event_Install_Start, MaskB_Event_Uninstall_Start, MaskB_Event_Uninstall_End, 1);
         if (is_L_MaskClog == false)
         {
             //MaskButton(ref isMaskB_Installing, maskB, maskB_ArchPos.anchoredPosition, true);
@@ -197,7 +223,7 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void MaskC_ButtonClick()
     {
-        MaskButton(gameManager.isMaskC_active, ref isMaskC_Installing, maskC, maskC_ArchPos.anchoredPosition, true, MaskC_Event_Install_Start, MaskC_Event_Install_End, MaskC_Event_Uninstall_Start, MaskC_Event_Uninstall_End);
+        MaskButton(gameManager.isMaskC_active, ref isMaskC_Installing, maskC, maskC_ArchPos.anchoredPosition, true, MaskC_Event_Install_Start, MaskC_Event_Install_End, MaskC_Event_Uninstall_Start, MaskC_Event_Uninstall_End, 2);
         if (is_L_MaskClog == false)
         {
             //MaskButton(ref isMaskC_Installing, maskC, maskC_ArchPos.anchoredPosition, true);
@@ -206,7 +232,7 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void MaskD_ButtonClick()
     {
-        MaskButton(gameManager.isMaskD_active, ref isMaskD_Installing, maskD, maskD_ArchPos.anchoredPosition, false, MaskD_Event_Install_Start, MaskD_Event_Install_End, MaskD_Event_Uninstall_Start, MaskD_Event_Uninstall_End);
+        MaskButton(gameManager.isMaskD_active, ref isMaskD_Installing, maskD, maskD_ArchPos.anchoredPosition, false, MaskD_Event_Install_Start, MaskD_Event_Install_End, MaskD_Event_Uninstall_Start, MaskD_Event_Uninstall_End, 3);
         if (is_R_MaskClog == false)
         {
             //MaskButton(ref isMaskD_Installing, maskD, maskD_ArchPos.anchoredPosition, false);
@@ -215,7 +241,7 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void MaskE_ButtonClick()
     {
-        MaskButton(gameManager.isMaskE_active, ref isMaskE_Installing, maskE, maskE_ArchPos.anchoredPosition, false, MaskE_Event_Install_Start, MaskE_Event_Install_End, MaskE_Event_Uninstall_Start, MaskE_Event_Uninstall_End);
+        MaskButton(gameManager.isMaskE_active, ref isMaskE_Installing, maskE, maskE_ArchPos.anchoredPosition, false, MaskE_Event_Install_Start, MaskE_Event_Install_End, MaskE_Event_Uninstall_Start, MaskE_Event_Uninstall_End, 4);
         if (is_R_MaskClog == false)
         {
             //MaskButton(ref isMaskE_Installing, maskE, maskE_ArchPos.anchoredPosition, false);
@@ -224,14 +250,14 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void MaskF_ButtonClick()
     {
-        MaskButton(gameManager.isMaskF_active, ref isMaskF_Installing, maskF, maskF_ArchPos.anchoredPosition, false, MaskF_Event_Install_Start, MaskF_Event_Install_End, MaskF_Event_Uninstall_Start, MaskF_Event_Uninstall_End);
+        MaskButton(gameManager.isMaskF_active, ref isMaskF_Installing, maskF, maskF_ArchPos.anchoredPosition, false, MaskF_Event_Install_Start, MaskF_Event_Install_End, MaskF_Event_Uninstall_Start, MaskF_Event_Uninstall_End, 5);
         if (is_R_MaskClog == false)
         {
             //MaskButton(ref isMaskF_Installing, maskF, maskF_ArchPos.anchoredPosition, false);
         }
     }
 
-    public void MaskButton(bool activeState ,ref bool ControlFlag, Image maskImage, Vector2 oriPos, bool isLeft, UnityEvent StartEvent, UnityEvent EndEvent, UnityEvent Un_StartEvent, UnityEvent Un_EndEvent)
+    public void MaskButton(bool activeState ,ref bool ControlFlag, Image maskImage, Vector2 oriPos, bool isLeft, UnityEvent StartEvent, UnityEvent EndEvent, UnityEvent Un_StartEvent, UnityEvent Un_EndEvent, int index)
     {
         if (!activeState) return;
 
@@ -253,17 +279,17 @@ public class MaskSelectCanvas : MonoBehaviour
             StartEvent.Invoke();
             if (isLeft)
             {
-                MakeMaskInstall_L(maskImage, StartEvent, EndEvent);
+                MakeMaskInstall_L(maskImage, oriPos, ref ControlFlag, StartEvent, EndEvent, index);
             }
             else
             {
-                MakeMaskInstall_R(maskImage, StartEvent, EndEvent);
+                MakeMaskInstall_R(maskImage, oriPos,ref ControlFlag, StartEvent, EndEvent, index);
             }
             
         }
-        else
+        else //CLOGª¬ºA¤¤
         {
-            Debug.Log("unInstall");
+            Debug.Log("CLOG unInstall");
             if (ControlFlag == true)
             {
                 MakeMaskUninstall(maskImage, oriPos, isLeft, Un_StartEvent, Un_EndEvent);
@@ -272,6 +298,37 @@ public class MaskSelectCanvas : MonoBehaviour
             else
             {
                 maskImage.rectTransform.DOShakeAnchorPos(0.5f, 20, 100, 45);
+
+                //make current mask back to ori pos;
+                if (isLeft)
+                {
+                    Debug.Log("LEFT ture");
+                    MaskAShow_Clog = false;
+                    MaskBShow_Clog = false;
+                    MaskCShow_Clog = false;
+                    MakeMaskUninstall(current_L_Image, current_L_OriPos, isLeft, current_L_UnStartEvent, current_L_UnEndEvent);
+                }
+                else
+                {
+                    Debug.Log("Right true");
+                    MaskDShow_Clog = false;
+                    MaskEShow_Clog = false;
+                    MaskFShow_Clog = false;
+                    MakeMaskUninstall(current_R_Image, current_R_OriPos, isLeft, current_R_UnStartEvent, current_R_UnEndEvent);
+                }
+                
+
+                //make mask install
+                if (isLeft)
+                {
+                    ControlFlag = true;
+                    MakeMaskInstall_L(maskImage, oriPos,ref ControlFlag, StartEvent, EndEvent, current_L_Index);
+                }
+                else
+                {
+                    ControlFlag = true; 
+                    MakeMaskInstall_R(maskImage, oriPos, ref ControlFlag, StartEvent, EndEvent, current_R_Index);
+                }
             }
         }
 
