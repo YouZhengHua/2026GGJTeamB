@@ -16,6 +16,13 @@ namespace ZhengHua
         
         private bool isFishing = false;
 
+        private GameManager gameManager;
+
+        private void Start()
+        {
+            gameManager = FindFirstObjectByType<GameManager>();
+        }
+
         public override void StageInit()
         {
             base.StageInit();
@@ -64,7 +71,14 @@ namespace ZhengHua
         public void OnMaskBObjectClick()
         {
             var maskBGotTween = maskB.transform.DOMove(endPos.position, 1f);
-            maskBGotTween.onComplete = () => { haveMaskB = true; };
+            maskBGotTween.onComplete = () =>
+            {
+                haveMaskB = true;
+                if (gameManager != null)
+                {
+                    gameManager.isMaskB_active = true;
+                }
+            };
         }
     }
 }
