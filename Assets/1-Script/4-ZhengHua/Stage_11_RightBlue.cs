@@ -1,17 +1,32 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ZhengHua
 {
     /// <summary>
     /// 右藍
+    /// 海面, 冰山, 漁船
+    /// 
     /// 流程一
     /// 點擊於魚竿釣出碎片左紅 key02
+    ///
+    /// 流程四
+    /// 檢查是否為左紅右藍，且左紅有打開太陽燈。
+    /// 右藍轉為白天，並出現白雲。
     /// </summary>
     public class Stage_11_RightBlue : StageManager
     {
+        /// <summary>
+        /// 是否已經取得碎片左紅 key02
+        /// </summary>
         private bool haveKey02 = false;
+        /// <summary>
+        /// 是否已經取得碎片左藍 key01
+        /// </summary>
+        private bool haveKey01 = false;
 
+        #region 流程一 相關參數
         [SerializeField] private GameObject key02;
         [SerializeField] private GameObject fishingRod;
 
@@ -20,6 +35,18 @@ namespace ZhengHua
         [SerializeField] private Transform gotPos;
         
         private bool isFishing = false;
+        private bool isFire = false;
+        #endregion
+
+        #region 流程四相關參數
+        [SerializeField] private GameObject cloud;
+        [SerializeField] private GameObject background;
+        
+        private bool isCloudShow = false;
+
+        public GameObject CloudGameObject => isCloudShow ? cloud : null;
+
+        #endregion
 
         private GameManager gameManager;
 
@@ -41,18 +68,46 @@ namespace ZhengHua
             }
             
             fishingRod.transform.localRotation = Quaternion.identity;
+
+            if (!isCloudShow)
+            {
+                bool isNeedShowCloud = this.IsLeftRedOnCurrent && this.IsRightBlueOnCurrent;
+                if (isNeedShowCloud)
+                {
+                    background.GetComponent<SpriteRenderer>().DOColor(Color.beige, 1f)
+                        .OnComplete(() =>
+                        {
+                            background.GetComponentInChildren<Text>().text = "白天";
+                            cloud.transform.DOScale(Vector3.one, 1.5f)
+                                .OnComplete(() =>
+                                {
+                                    isCloudShow = true;
+                                });
+                        });
+                }
+            }
         }
 
+        /// <summary>
+        /// 顯示釣魚動作並取得碎片左紅 key02
+        /// </summary>
         public void FindKey02()
         {
+            // 只顯示一次釣魚動畫
             if (isFishing)
                 return;
             
             var fishingRodShake = fishingRod.transform.DOShakePosition(1f, new Vector3(0.2f, 0.2f, 0), 20, 90f);
             fishingRodShake.Pause();
+            // 已經得到碎片，只顯示魚竿抖動，並且抖動完畢後可以繼續互動。
             if (haveKey02)
             {
+                fishingRodShake.onComplete += () =>
+                {
+                    isFishing = false;
+                };
                 fishingRodShake.Play();
+                
                 return;
             }
             isFishing = true;
@@ -71,6 +126,18 @@ namespace ZhengHua
             
             maskBTween.SetEase(Ease.OutBack);
             maskBTween.Pause();
+        }
+
+        /// <summary>
+        /// 顯示冰山融化動作並取得碎片左藍 key01
+        /// </summary>
+        public void FindKey01()
+        {
+            // 已經得到碎片，不用再顯示
+            if (haveKey01)
+                return;
+            if (!isFire)
+                return;
         }
 
         public void OnKey02ObjectClick()

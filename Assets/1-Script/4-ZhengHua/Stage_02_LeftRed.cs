@@ -1,18 +1,20 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ZhengHua
 {
     /// <summary>
     /// 左紅
+    /// 太陽燈, 金字塔。
     /// 流程二
-    /// 點擊太陽拉繩釣出碎片左綠 key01
+    /// 點擊太陽拉繩釣出碎片左綠 key00
     /// </summary>
     public class Stage_02_LeftRed : StageManager
     {
-        private bool haveKey01 = false;
+        private bool haveKey00 = false;
 
-        [SerializeField] private GameObject key01;
+        [FormerlySerializedAs("key01")] [SerializeField] private GameObject key00;
         [SerializeField] private GameObject lightToggle;
 
         [SerializeField] private Transform startPos;
@@ -36,9 +38,9 @@ namespace ZhengHua
             isLightOpened = false;
             
             // 還未拿到碎片 B 重置碎片位置。
-            if (haveKey01 == false)
+            if (haveKey00 == false)
             {
-                key01.transform.position = startPos.position;
+                key00.transform.position = startPos.position;
             }
             
             lightToggle.transform.localRotation = Quaternion.identity;
@@ -50,14 +52,14 @@ namespace ZhengHua
                 return;
             
             var lightToggleSequence = DOTween.Sequence();
-            var lightToggleUp = lightToggle.transform.DOMoveY(lightToggle.transform.position.y - 1f, 0.3f);
+            var lightToggleDown = lightToggle.transform.DOMoveY(lightToggle.transform.position.y - 1f, 0.3f);
+            lightToggleDown.Pause();
+            var lightToggleUp = lightToggle.transform.DOMoveY(lightToggle.transform.position.y, 0.2f);
             lightToggleUp.Pause();
-            var lightToggleDown = lightToggle.transform.DOMoveY(lightToggle.transform.position.y, 0.2f);
-            lightToggleUp.Pause();
-            lightToggleSequence.Append(lightToggleUp);
             lightToggleSequence.Append(lightToggleDown);
+            lightToggleSequence.Append(lightToggleUp);
             lightToggleSequence.Pause();
-            if (haveKey01)
+            if (haveKey00)
             {
                 lightToggleSequence.Play();
                 return;
@@ -65,25 +67,30 @@ namespace ZhengHua
             
             isLightOpened = true;
             
-            var key01Down = key01.transform.DOMove(gotPos1.position, 0.5f);
+            var key01Down = key00.transform.DOMove(gotPos1.position, 0.5f);
             key01Down.Pause();
-            var key01End = key01.transform.DOMove(gotPos2.position, 1.5f);
+            var key01End = key00.transform.DOMove(gotPos2.position, 1.5f);
+            key01End.SetEase(Ease.Linear);
             key01End.Pause();
+            var key01Rotate = key00.transform.DORotate(new Vector3(0f, 0f, -360f), 1.5f, RotateMode.FastBeyond360);
+            key01Rotate.SetEase(Ease.Linear);
+            key01Rotate.Pause();
             
             lightToggleSequence.Append(key01Down);
             lightToggleSequence.Append(key01End);
+            lightToggleSequence.Insert(1, key01Rotate);
             lightToggleSequence.Play();
         }
 
         public void OnKey01ObjectClick()
         {
-            var maskBGotTween = key01.transform.DOMove(endPos.position, 1f);
+            var maskBGotTween = key00.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
-                haveKey01 = true;
+                haveKey00 = true;
                 if (gameManager != null)
                 {
-                    gameManager.isMaskB_active = true;
+                    gameManager.isMaskA_active = true;
                 }
             };
         }
