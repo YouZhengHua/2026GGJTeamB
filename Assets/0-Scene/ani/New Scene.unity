@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1272.8287, y: 545.0575}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29431058
@@ -944,8 +944,8 @@ RectTransform:
   m_Children:
   - {fileID: 1952345392}
   - {fileID: 999691016}
-  - {fileID: 455966296}
   - {fileID: 29431057}
+  - {fileID: 455966296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2326,8 +2326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
   menuRoot: {fileID: 455966295}
-  creditsPanel: {fileID: 927701351}
-  gameplaySceneName: game
+  creditsPanel: {fileID: 29431056}
+  gameplaySceneName: Game
 --- !u!1 &2062037223
 GameObject:
   m_ObjectHideFlags: 0
