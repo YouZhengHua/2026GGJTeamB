@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class MaskManager : MonoBehaviour
+public class MaskManager : MonoSingleton<MaskManager>
 {
     [SerializeField] private MaskArtData maskArtData;
     [SerializeField] private MaskButtonView[] maskButtons;

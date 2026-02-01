@@ -21,9 +21,9 @@ namespace ZhengHua
         [SerializeField] private Transform endPos;
         [SerializeField] private Transform gotPos1;
         [SerializeField] private Transform gotPos2;
-        
+
         [SerializeField] private Stage_10_RightRed rightRed;
-        
+
         private bool isLightOpened = false;
 
         private GameObject _fruit;
@@ -40,21 +40,23 @@ namespace ZhengHua
             base.StageInit();
 
             isLightOpened = false;
-            
+
             // 還未拿到碎片 B 重置碎片位置。
             if (haveKey00 == false)
             {
                 key00.transform.position = startPos.position;
             }
-            
+
             lightToggle.transform.localRotation = Quaternion.identity;
+            
+            AudioManager.Instance.PlayBGM("desert_wind_Music");
         }
 
         public void FindKey01()
         {
             if (isLightOpened)
                 return;
-            
+
             var lightToggleSequence = DOTween.Sequence();
             var lightToggleDown = lightToggle.transform.DOMoveY(lightToggle.transform.position.y - 1f, 0.3f);
             lightToggleDown.Pause();
@@ -68,9 +70,9 @@ namespace ZhengHua
                 lightToggleSequence.Play();
                 return;
             }
-            
+
             isLightOpened = true;
-            
+
             var key01Down = key00.transform.DOMove(gotPos1.position, 0.5f);
             key01Down.Pause();
             var key01End = key00.transform.DOMove(gotPos2.position, 1.5f);
@@ -79,7 +81,7 @@ namespace ZhengHua
             var key01Rotate = key00.transform.DORotate(new Vector3(0f, 0f, -360f), 1.5f, RotateMode.FastBeyond360);
             key01Rotate.SetEase(Ease.Linear);
             key01Rotate.Pause();
-            
+
             lightToggleSequence.Append(key01Down);
             lightToggleSequence.Append(key01End);
             lightToggleSequence.Insert(1, key01Rotate);
@@ -88,6 +90,7 @@ namespace ZhengHua
 
         public void OnKey01ObjectClick()
         {
+            /*
             var maskBGotTween = key00.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
@@ -97,8 +100,12 @@ namespace ZhengHua
                     gameManager.isMaskA_active = true;
                 }
             };
+            */
+
+            key00.gameObject.SetActive(false);
+            MaskManager.Instance.UnlockMask(MaskType.LeftGreen);
         }
-        
+
         public void SetFruit(GameObject fruit) => _fruit = fruit;
 
         public void OnFruitClick()

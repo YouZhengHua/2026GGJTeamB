@@ -27,6 +27,8 @@ namespace ZhengHua
                     bear.transform.SetParent(rightRed.transform);
                 });
             }
+            
+            AudioManager.Instance.PlayBGM("Ocean_Wave_Music");
         }
 
         public void GotEnd()
