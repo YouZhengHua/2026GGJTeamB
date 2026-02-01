@@ -148,8 +148,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 881095551}
   - {fileID: 900300709}
+  - {fileID: 881095551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &68846696
@@ -2052,15 +2052,15 @@ MonoBehaviour:
   leftRenderer: {fileID: 8356579327409673160}
   rightRenderer: {fileID: 721148495413218191}
   blendShapeIndex: 0
-  duration: 0.15
-  flashDuration: 0.15
+  duration: 0.25
+  flashDuration: 0.25
   maskObjects:
-  - {fileID: 1246301781}
-  - {fileID: 110471899}
-  - {fileID: 1309207575}
   - {fileID: 1927501876}
   - {fileID: 1869117722}
   - {fileID: 1836788756}
+  - {fileID: 1246301781}
+  - {fileID: 110471899}
+  - {fileID: 1309207575}
 --- !u!1 &1519703303
 GameObject:
   m_ObjectHideFlags: 0
