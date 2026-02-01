@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using Mono.CSharp;
 using UnityEngine;
 using UnityEngine.UI;
@@ -173,7 +174,8 @@ namespace ZhengHua
                 return;
 
             isGotFire = true;
-            mountain.GetComponent<SpriteRenderer>().DOColor(Color.softRed, 2f)
+            Color c = new Color(0.9f, 0.1921569f, 0.1960784f, 0.25f);
+            mountain.GetComponent<SpriteRenderer>().DOColor(c, 2f)
                 .OnPlay(() =>
                 {
                     mountain.transform.DOShakeScale(1.5f, 0.2f, 12);
