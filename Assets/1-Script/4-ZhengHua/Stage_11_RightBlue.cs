@@ -108,6 +108,8 @@ namespace ZhengHua
                         iceMountain.transform.DOScaleY(0.3f, 3f);
                     });
             }
+            
+            AudioManager.Instance.PlayBGM("Ocean_Wave_Music");
         }
 
         /// <summary>

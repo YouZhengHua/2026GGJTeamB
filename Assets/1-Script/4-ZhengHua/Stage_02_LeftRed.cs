@@ -48,6 +48,8 @@ namespace ZhengHua
             }
 
             lightToggle.transform.localRotation = Quaternion.identity;
+            
+            AudioManager.Instance.PlayBGM("desert_wind_Music");
         }
 
         public void FindKey01()

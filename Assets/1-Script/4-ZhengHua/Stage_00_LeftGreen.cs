@@ -65,6 +65,8 @@ namespace ZhengHua
 
             fansToggle.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 30f));
             fans.transform.localRotation = Quaternion.Euler(new Vector3(0f, 40f, 0f));
+            
+            AudioManager.Instance.PlayBGM("gentleBreeze_Music");
         }
 
         public void FansWork()
