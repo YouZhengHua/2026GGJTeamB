@@ -149,7 +149,7 @@ namespace ZhengHua
                         _fish.transform.DOMove(gotPos2.position, 1f)
                             .OnComplete(() =>
                             {
-                                _fish.transform.DOMove(new Vector3(3.86f, 1.2f, -1f), 1.5f)
+                                _fish.transform.DOMove(new Vector3(3.86f, 0.6f, -1f), 1.5f)
                                     .OnComplete(() =>
                                     {
                                         _fish.transform.SetParent(rightRed.transform);
