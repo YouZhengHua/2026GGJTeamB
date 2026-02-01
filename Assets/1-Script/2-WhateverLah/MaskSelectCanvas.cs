@@ -159,6 +159,8 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void MakeMaskInstall_L(Image mask, Vector2 oriPos, ref bool L_Flag, UnityEvent startEvent,UnityEvent endEvent, int myIndex, UnityEvent unStartEvent, UnityEvent unEndEvent)
     {
+        AudioManager.Instance.PlaySFX("mask_wearOn_Fix");
+
         is_L_MaskClog = true;
         on_L_GameObject = mask.gameObject;
 
@@ -178,6 +180,7 @@ public class MaskSelectCanvas : MonoBehaviour
     }
     public void MakeMaskInstall_R(Image mask,Vector2 oriPos, ref bool R_Flag, UnityEvent startEvent, UnityEvent endEvent, int myIndex, UnityEvent unStartEvent, UnityEvent unEndEvent)
     {
+        AudioManager.Instance.PlaySFX("mask_wearOn_Fix");
         is_R_MaskClog = true;
         on_R_GameObject = mask.gameObject;
 
@@ -198,6 +201,7 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void MakeMaskUninstall(Image mask, Vector2 MaskOriPos, bool isLeft, UnityEvent startEvent, UnityEvent endEvent)
     {
+        AudioManager.Instance.PlaySFX("mask_wearOn_Fix");
         if (isLeft)
         {
             is_L_MaskClog = false;
