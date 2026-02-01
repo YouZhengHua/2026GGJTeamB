@@ -162,7 +162,7 @@ namespace ZhengHua
                 }
             };
             */
-
+            haveKey12 = true;
             key12.gameObject.SetActive(false);
             MaskManager.Instance.UnlockMask(MaskType.RightGreen);
         }
