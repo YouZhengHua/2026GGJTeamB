@@ -99,16 +99,13 @@ namespace ZhengHua
             
             if (this.IsLeftGreenOnCurrent && this.IsRightGreenOnCurrent)
             {
-                Debug.Log("確認是否有右綠的程式");
                 if (stage_12_rightGreen == null)
                     return;
-
-                Debug.Log("確認是否擁有白雲");
+                
                 if (_cloud == null)
                     return;
                 
-                Debug.Log("白雲開始往右飄動");
-                var cloudMove = _cloud.transform.DOMoveX(_cloud.transform.position.x + 5f, 1f)
+                _cloud.transform.DOMoveX(_cloud.transform.position.x + 8f, 1f)
                     .OnComplete(() =>
                     {
                         _cloud.transform.SetParent(stage_12_rightGreen.transform);

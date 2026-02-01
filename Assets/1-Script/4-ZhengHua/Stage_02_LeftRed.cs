@@ -24,6 +24,8 @@ namespace ZhengHua
         
         private bool isLightOpened = false;
 
+        private GameObject _fruit;
+
         private GameManager gameManager;
 
         private void Start()
@@ -94,5 +96,7 @@ namespace ZhengHua
                 }
             };
         }
+        
+        public void SetFruit(GameObject fruit) => _fruit = fruit;
     }
 }
