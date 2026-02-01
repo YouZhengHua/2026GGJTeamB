@@ -2783,6 +2783,7 @@ MonoBehaviour:
   _maskSelectCanvas: {fileID: 6690453}
   key10: {fileID: 2082944719}
   endPos: {fileID: 141306997}
+  rain: {fileID: 0}
 --- !u!1 &1694742443
 GameObject:
   m_ObjectHideFlags: 0
