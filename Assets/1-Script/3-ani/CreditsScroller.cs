@@ -4,13 +4,13 @@ using TMPro;
 public class CreditsScroller : MonoBehaviour
 {
     [Header("Assign in Inspector")]
-    public RectTransform viewportRect;   // Panel_Credits 的 RectTransform
-    public RectTransform creditsRect;    // TxtCredits 的 RectTransform
-    public TMP_Text creditsText;         // TxtCredits 的 TMP 元件
+    public RectTransform viewportRect;   // Panel_Credits RectTransform
+    public RectTransform creditsRect;    // TxtCredits RectTransform
+    public TMP_Text creditsText;         // TxtCredits TMP_Text (TextMeshProUGUI)
 
     [Header("Tuning")]
-    public float speed = 60f;            // 每秒向下移動像素
-    public float padding = 40f;          // 起始/結束留白
+    public float speed = 60f;            // pixels/sec
+    public float padding = 40f;          // extra spacing
     public bool playOnEnable = true;
     public bool loop = false;
 
@@ -24,7 +24,9 @@ public class CreditsScroller : MonoBehaviour
 
     public void Begin()
     {
-        // 取得文字實際高度，避免高度不準
+        if (viewportRect == null || creditsRect == null) return;
+
+        // Ensure correct content height
         if (creditsText != null)
         {
             creditsText.ForceMeshUpdate();
@@ -34,12 +36,12 @@ public class CreditsScroller : MonoBehaviour
         }
 
         float viewportH = viewportRect.rect.height;
-        float contentH  = creditsRect.rect.height;
+        float contentH = creditsRect.rect.height;
 
-        // 內容完全在視窗上方（看不到）
+        // Start: fully above viewport
         startY = viewportH * 0.5f + contentH * 0.5f + padding;
-        // 內容完全在視窗下方（看不到）
-        endY   = -(viewportH * 0.5f + contentH * 0.5f + padding);
+        // End: fully below viewport
+        endY = -(viewportH * 0.5f + contentH * 0.5f + padding);
 
         var p = creditsRect.anchoredPosition;
         creditsRect.anchoredPosition = new Vector2(p.x, startY);
@@ -52,8 +54,7 @@ public class CreditsScroller : MonoBehaviour
         if (!playing) return;
 
         var p = creditsRect.anchoredPosition;
-        // 往下滾：y 變小
-        p.y -= speed * Time.unscaledDeltaTime;
+        p.y -= speed * Time.unscaledDeltaTime; // move down
         creditsRect.anchoredPosition = p;
 
         if (p.y <= endY)
