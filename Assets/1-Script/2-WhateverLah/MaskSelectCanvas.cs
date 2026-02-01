@@ -94,9 +94,16 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public RectTransform Larger_Y_Extend;
 
+    public bgmContainer _bgmContainer;
+
     void Start()
     {
         gameManager = FindFirstObjectByType<GameManager>();
+
+        _bgmContainer = FindFirstObjectByType<bgmContainer>();
+
+        init();
+
     }
     void Update()
     {
@@ -134,7 +141,24 @@ public class MaskSelectCanvas : MonoBehaviour
 
     public void init()
     {
+        //MaskA_Event_Install_Start.AddListener(()=> { AudioManager.Instance.PlayBGM("gentleBreeze_Music"); });
+        MaskA_Event_Install_Start.AddListener(()=> { _bgmContainer.FadeIn(0); });
+        MaskA_Event_Uninstall_Start.AddListener(()=> { _bgmContainer.FadeOut(0);});
 
+        MaskB_Event_Install_Start.AddListener(() => { _bgmContainer.FadeIn(1); });
+        MaskB_Event_Uninstall_Start.AddListener(() => { _bgmContainer.FadeOut(1); });
+
+        MaskC_Event_Install_Start.AddListener(() => { _bgmContainer.FadeIn(2); });
+        MaskC_Event_Uninstall_Start.AddListener(() => { _bgmContainer.FadeOut(2); });
+
+        MaskD_Event_Install_Start.AddListener(() => { _bgmContainer.FadeIn(3); });
+        MaskD_Event_Uninstall_Start.AddListener(() => { _bgmContainer.FadeOut(3); });
+
+        MaskE_Event_Install_Start.AddListener(() => { _bgmContainer.FadeIn(4); });
+        MaskE_Event_Uninstall_Start.AddListener(() => { _bgmContainer.FadeOut(4); });
+
+        MaskF_Event_Install_Start.AddListener(() => { _bgmContainer.FadeIn(5); });
+        MaskF_Event_Uninstall_Start.AddListener(() => { _bgmContainer.FadeOut(5); });
     }
 
     public void MaskShowAndHide()
@@ -295,6 +319,7 @@ public class MaskSelectCanvas : MonoBehaviour
             Debug.Log("正常開啟Control flag");
             ControlFlag = true;
             StartEvent.Invoke();
+            _bgmContainer.FadeIn(index);
             if (isLeft)
             {
                 MakeMaskInstall_L(maskImage, oriPos, ref ControlFlag, StartEvent, EndEvent, index, Un_StartEvent, Un_EndEvent);
@@ -311,6 +336,7 @@ public class MaskSelectCanvas : MonoBehaviour
             if (ControlFlag == true)
             {
                 Debug.Log("正常 unInstall");
+                _bgmContainer.FadeOut(index);
                 MakeMaskUninstall(maskImage, oriPos, isLeft, Un_StartEvent, Un_EndEvent);
                 ControlFlag = false;
             }
@@ -325,6 +351,8 @@ public class MaskSelectCanvas : MonoBehaviour
                     MaskAShow_Clog = false;
                     MaskBShow_Clog = false;
                     MaskCShow_Clog = false;
+                    current_L_Index = index; 
+                    _bgmContainer.FadeOut(index);
                     MakeMaskUninstall(current_L_Image, current_L_OriPos, isLeft, current_L_UnStartEvent, current_L_UnEndEvent);
                 }
                 else
@@ -333,6 +361,8 @@ public class MaskSelectCanvas : MonoBehaviour
                     MaskDShow_Clog = false;
                     MaskEShow_Clog = false;
                     MaskFShow_Clog = false;
+                    current_R_Index = index;
+                    _bgmContainer.FadeOut(index);
                     MakeMaskUninstall(current_R_Image, current_R_OriPos, isLeft, current_R_UnStartEvent, current_R_UnEndEvent);
                 }
                 
@@ -341,34 +371,17 @@ public class MaskSelectCanvas : MonoBehaviour
                 if (isLeft)
                 {
                     ControlFlag = true;
+                    _bgmContainer.FadeIn(index);
                     MakeMaskInstall_L(maskImage, oriPos,ref ControlFlag, StartEvent, EndEvent, current_L_Index, Un_StartEvent, Un_EndEvent);
                 }
                 else
                 {
-                    ControlFlag = true; 
+                    ControlFlag = true;
+                    _bgmContainer.FadeIn(index);
                     MakeMaskInstall_R(maskImage, oriPos, ref ControlFlag, StartEvent, EndEvent, current_R_Index, Un_StartEvent, Un_EndEvent);
                 }
             }
         }
-
-
-        /*
-        ControlFlag = !ControlFlag;
-        if (ControlFlag)
-        {
-            if (isLeft)
-            {
-                MakeMaskInstall_L(maskImage);
-            }
-            else
-            {
-                MakeMaskInstall_R(maskImage);
-            }
-        }
-        else
-        {
-            MakeMaskUninstall(maskImage, oriPos, isLeft);
-        }*/
     }
 
     public void Delay(Action act, float dur)
