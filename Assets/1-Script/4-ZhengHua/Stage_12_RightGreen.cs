@@ -1,5 +1,7 @@
-﻿using DG.Tweening;
+﻿using System.Security;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ZhengHua
 {
@@ -15,7 +17,6 @@ namespace ZhengHua
     public class Stage_12_RightGreen : StageManager
     {
         private GameObject _cloud;
-        public GameObject CloudGameObject => _cloud;
         
         private bool haveKey10 = false;
 
@@ -23,12 +24,38 @@ namespace ZhengHua
         [SerializeField] private Transform endPos;
 
         [SerializeField] private GameObject rain;
+        [SerializeField] private GameObject tree;
+
+        [SerializeField] private GameObject leftFruit;
+        private bool leftFruitClick = false;
+        [SerializeField] private GameObject rightFruit;
+        private bool rightFruitClick = false;
+
+        private bool part8Done = false;
         
         private GameManager gameManager;
+
+        [SerializeField] private Stage_02_LeftRed stage02LeftRed;
         
         private void Start()
         {
             gameManager = FindFirstObjectByType<GameManager>();
+        }
+
+        public override void StageInit()
+        {
+            base.StageInit();
+
+            if (_cloud == null)
+                return;
+
+            if (part8Done)
+                return;
+            
+            leftFruitClick = false;
+            rightFruitClick = false;
+            leftFruit.transform.localPosition = new Vector3(3.82f, 1.88f, -1f);
+            rightFruit.transform.localPosition = new Vector3(6.32f, 2.03f, -1f);
         }
         
         public void GotCloud(GameObject cloud)
@@ -37,12 +64,24 @@ namespace ZhengHua
                 return;
             
             _cloud = cloud;
-            Debug.Log("右綠取得雲朵 開始要下雨");
-        }
-        
-        private void FindKey10()
-        {
-            Debug.Log("右綠 松樹成長完畢 出現碎片右紅 key10");
+            rain.transform.DOScale(Vector3.one, 0.5f)
+                .OnComplete(() =>
+                {
+                    rain.transform.DOMoveY(-1f, 1f)
+                        .OnComplete(() =>
+                        {
+                            rain.transform.DOScaleY(0f, 0.5f);
+                            _cloud.transform.DOScaleY(0f, 0.5f);
+                            tree.transform.DOScaleY(5f, 1.5f)
+                                .OnComplete(() =>
+                                {
+                                    tree.GetComponentInChildren<Text>().text = "松\n樹";
+                                    key10.transform.DOScale(Vector3.one, 0.5f);
+                                    leftFruit.transform.DOScale(Vector3.one, 0.5f);
+                                    rightFruit.transform.DOScale(Vector3.one, 0.5f);
+                                });
+                        });
+                });
         }
 
         public void OnKey10ObjectClick()
@@ -56,6 +95,58 @@ namespace ZhengHua
                     gameManager.isMaskD_active = true;
                 }
             };
+        }
+
+        public void OnLeftFruitClick()
+        {
+            if (leftFruitClick)
+                return;
+
+            leftFruit.transform.DOShakeRotation(1f, 35f, 4)
+                .OnComplete(() =>
+                {
+                    leftFruit.transform.DOMoveY(-2.5f, 0.5f).OnComplete(() =>
+                    {
+                        leftFruitClick = true;
+
+                        if (rightFruitClick)
+                        {
+                            rightFruit.transform.DOLocalMove(new Vector3(12f, 8f), 3f);
+                        }
+                    });
+                });
+        }
+
+        public void OnRightFruitClick()
+        {
+            if (rightFruitClick)
+                return;
+
+            rightFruit.transform.DOShakeRotation(1f, 35f, 4)
+                .OnComplete(() =>
+                {
+                    rightFruit.transform.DOMoveY(-2.5f, 0.5f).OnComplete(() =>
+                    {
+                        rightFruitClick = true;
+                        if (leftFruitClick)
+                        {
+                            if (this.IsLeftRedOnCurrent && this.IsRightGreenOnCurrent)
+                            {
+                                leftFruit.transform.DOLocalMove(new Vector3(-4f, 0.75f), 2.2f)
+                                    .OnComplete(() =>
+                                    {
+                                        part8Done = true;
+                                        leftFruit.transform.SetParent(stage02LeftRed.transform);
+                                        stage02LeftRed.SetFruit(leftFruit);
+                                    });
+                            }
+                            else
+                            {
+                                leftFruit.transform.DOLocalMove(new Vector3(-12f, 8f), 3f);
+                            }
+                        }
+                    });
+                });
         }
     }
 }

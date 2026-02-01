@@ -196,7 +196,6 @@ namespace ZhengHua
                                             isFishing = false;
                                             fishEnd = true;
                                             fish.transform.SetParent(leftRed.transform);
-                                            leftRed.GotFish(fish);
                                         });
                                 });
                         }

@@ -12,4 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7accd73e81f259a46990112fce012f32, type: 3}
   m_Name: Sound Library
   m_EditorClassIdentifier: Assembly-CSharp::SoundLibrary
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 6c4d695862e42ee43ab5b8ff32bfe792, type: 3}
+  - {fileID: 8300000, guid: fd0a60b1f92100248a85bdbd60f4c666, type: 3}
+  - {fileID: 8300000, guid: 7f8026c693c7e5d4fbdc05b41c4bfff9, type: 3}
+  - {fileID: 8300000, guid: 702c742f500a4274fab73e9040327fac, type: 3}
+  - {fileID: 8300000, guid: e7028fbcee48f534189c8bbfcf68a52a, type: 3}
+  - {fileID: 8300000, guid: 305f5fb22155a0f468e01c427ac66b63, type: 3}
+  - {fileID: 8300000, guid: 52671209b2e37cb4291bc16979701f80, type: 3}
+  - {fileID: 8300000, guid: 4b6204075214deb438786e55e3ce5afe, type: 3}
+  - {fileID: 8300000, guid: 14b171954acb24b4c8a79e0044367e97, type: 3}
+  - {fileID: 8300000, guid: 1e26d9e7cb1f8974daabbdeea8780062, type: 3}
+  - {fileID: 8300000, guid: 262078ec45463ba4895cffbc316f41be, type: 3}
+  - {fileID: 8300000, guid: 5c91f368152a22f4aa1f6a1e7094bc81, type: 3}
+  - {fileID: 8300000, guid: da3f3f8d17d08e248911e6cf902f7bf2, type: 3}
+  - {fileID: 8300000, guid: 278e86d11e14d154b8023e17585ec5c1, type: 3}
+  - {fileID: 8300000, guid: fdc93e9330b0bf94e950868c8a2dccba, type: 3}
+  - {fileID: 8300000, guid: e84b19427f0419f42a457518adce702c, type: 3}
+  - {fileID: 8300000, guid: 52ed793f62d784c4eb834e02bdc8e387, type: 3}
+  - {fileID: 8300000, guid: 1bfb0387f7dd8fc4f9b191bd6455ca46, type: 3}
+  - {fileID: 8300000, guid: 9d4e261dcb28f1c4d88e9ab21a4b329e, type: 3}
+  - {fileID: 8300000, guid: fed03081bc543834b9336953d95dabe0, type: 3}
+  - {fileID: 8300000, guid: 2388d6922ae9fdf4cb08bcee1dbd72f3, type: 3}
+  - {fileID: 8300000, guid: 73c581d12d68ead49a3d25c51be7c81c, type: 3}
+  - {fileID: 8300000, guid: 8b9ebeefe2bdabc499bce4d48acecb4b, type: 3}
+  - {fileID: 8300000, guid: 53e0306e387662d479fc63de4e98c3d5, type: 3}
+  - {fileID: 8300000, guid: 93d96e9e22e62e840a6893f6390649d4, type: 3}
+  - {fileID: 8300000, guid: 9c92d01da1c024448aa232d0f9309ca2, type: 3}

@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1795808579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1560,6 +1560,12 @@ MonoBehaviour:
   gotPos: {fileID: 0}
   cloud: {fileID: 0}
   background: {fileID: 0}
+  leftGreen: {fileID: 0}
+  iceMountain: {fileID: 0}
+  endPos2: {fileID: 0}
+  key01: {fileID: 0}
+  fish: {fileID: 0}
+  leftRed: {fileID: 0}
 --- !u!1 &1990671964
 GameObject:
   m_ObjectHideFlags: 0
