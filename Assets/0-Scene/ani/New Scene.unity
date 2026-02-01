@@ -2989,7 +2989,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tim\nAnkhra\n\u963F\u5C3C\n\u653F\u6A3A\n\u963F\u5143"
+  m_text: "Tim\nAnkhra\n\u963F\u5C3C\n\u653F\u6A3A\n\u963F\u5143\n\u963F\u8B19"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffd7b7bb9e3707b418174678acea31da, type: 2}
   m_sharedMaterial: {fileID: -7576222241789082230, guid: ffd7b7bb9e3707b418174678acea31da, type: 2}
@@ -2999,7 +2999,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4282127580
-  m_fontColor: {r: 0.8627452, g: 0.07843138, b: 0.2352941, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3836,7 +3836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
   menuRoot: {fileID: 455966295}
   creditsPanel: {fileID: 29431056}
-  optionsPanel: {fileID: 0}
+  optionsPanel: {fileID: 2147154443}
   gameplaySceneName: Main
 --- !u!114 &1975204952
 MonoBehaviour:
@@ -3884,7 +3884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.1539, y: 181.88}
+  m_AnchoredPosition: {x: 16.1539, y: 85.429}
   m_SizeDelta: {x: 275.3807, y: 148.3365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143653337
