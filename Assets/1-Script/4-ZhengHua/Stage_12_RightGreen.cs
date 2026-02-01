@@ -17,7 +17,7 @@ namespace ZhengHua
     public class Stage_12_RightGreen : StageManager
     {
         private GameObject _cloud;
-        
+
         private bool haveKey10 = false;
 
         [SerializeField] private GameObject key10;
@@ -32,11 +32,11 @@ namespace ZhengHua
         private bool rightFruitClick = false;
 
         private bool part8Done = false;
-        
+
         private GameManager gameManager;
 
         [SerializeField] private Stage_02_LeftRed stage02LeftRed;
-        
+
         private void Start()
         {
             gameManager = FindFirstObjectByType<GameManager>();
@@ -51,18 +51,18 @@ namespace ZhengHua
 
             if (part8Done)
                 return;
-            
+
             leftFruitClick = false;
             rightFruitClick = false;
             leftFruit.transform.localPosition = new Vector3(3.82f, 1.88f, -1f);
             rightFruit.transform.localPosition = new Vector3(6.32f, 2.03f, -1f);
         }
-        
+
         public void GotCloud(GameObject cloud)
         {
             if (haveKey10)
                 return;
-            
+
             _cloud = cloud;
             rain.transform.DOScale(Vector3.one, 0.5f)
                 .OnComplete(() =>
@@ -86,6 +86,7 @@ namespace ZhengHua
 
         public void OnKey10ObjectClick()
         {
+            /*
             var maskBGotTween = key10.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
@@ -95,6 +96,9 @@ namespace ZhengHua
                     gameManager.isMaskD_active = true;
                 }
             };
+            */
+            key10.gameObject.SetActive(false);
+            MaskManager.Instance.UnlockMask(MaskType.RightRed);
         }
 
         public void OnLeftFruitClick()

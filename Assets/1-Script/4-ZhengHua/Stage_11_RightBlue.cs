@@ -33,7 +33,7 @@ namespace ZhengHua
         [SerializeField] private Transform startPos;
         [SerializeField] private Transform endPos;
         [SerializeField] private Transform gotPos;
-        
+
         private bool isFishing = false;
         private bool isFire = false;
         #endregion
@@ -41,7 +41,7 @@ namespace ZhengHua
         #region 流程四相關參數
         [SerializeField] private GameObject cloud;
         [SerializeField] private GameObject background;
-        
+
         private bool isCloudShow = false;
 
         public GameObject CloudGameObject => isCloudShow ? cloud : null;
@@ -49,9 +49,9 @@ namespace ZhengHua
         #endregion
 
         private GameManager gameManager;
-        
+
         [SerializeField] private Stage_00_LeftGreen leftGreen;
-        [SerializeField] private GameObject iceMountain;        
+        [SerializeField] private GameObject iceMountain;
         [SerializeField] private Transform endPos2;
         [SerializeField] private GameObject key01;
 
@@ -69,13 +69,13 @@ namespace ZhengHua
             base.StageInit();
 
             isFishing = false;
-            
+
             // 還未拿到碎片 B 重置碎片位置。
             if (haveKey02 == false)
             {
                 key02.transform.position = startPos.position;
             }
-            
+
             fishingRod.transform.localRotation = Quaternion.identity;
 
             if (!isCloudShow)
@@ -118,7 +118,7 @@ namespace ZhengHua
             // 只顯示一次釣魚動畫, 擁有 key01 時，使用另一個釣魚事件
             if (isFishing || haveKey01)
                 return;
-            
+
             var fishingRodShake = fishingRod.transform.DOShakePosition(1f, new Vector3(0.2f, 0.2f, 0), 20, 90f);
             fishingRodShake.Pause();
             // 已經得到碎片，只顯示魚竿抖動，並且抖動完畢後可以繼續互動。
@@ -129,29 +129,30 @@ namespace ZhengHua
                     isFishing = false;
                 };
                 fishingRodShake.Play();
-                
+
                 return;
             }
             isFishing = true;
-                
+
             var sequence = DOTween.Sequence();
             var maskBTween = key02.transform.DOMove(gotPos.position, 0.5f);
             maskBTween.SetEase(Ease.OutBack);
             maskBTween.Pause();
-            
+
             var fishingRodUp = fishingRod.transform.DOLocalRotate(new Vector3(0f, 0f, -30f), 0.3f);
             fishingRodUp.Pause();
-            
+
             sequence.Append(fishingRodShake);
             sequence.Append(maskBTween);
             sequence.Insert(1, fishingRodUp);
-            
+
             maskBTween.SetEase(Ease.OutBack);
             maskBTween.Pause();
         }
 
         public void OnKey02ObjectClick()
         {
+            /*
             var maskBGotTween = key02.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
@@ -161,10 +162,14 @@ namespace ZhengHua
                     gameManager.isMaskC_active = true;
                 }
             };
+            */
+            key02.gameObject.SetActive(false);
+            MaskManager.Instance.UnlockMask(MaskType.LeftRed);
         }
-        
+
         public void OnKey01ObjectClick()
         {
+            /*
             var maskBGotTween = key01.transform.DOMove(endPos2.position, 1f);
             maskBGotTween.onComplete = () =>
             {
@@ -174,6 +179,9 @@ namespace ZhengHua
                     gameManager.isMaskB_active = true;
                 }
             };
+            */
+            key01.gameObject.SetActive(false);
+            MaskManager.Instance.UnlockMask(MaskType.LeftBlue);
         }
 
         public void GotFish()

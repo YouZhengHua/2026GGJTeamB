@@ -29,9 +29,9 @@ namespace ZhengHua
         [SerializeField] private GameObject fans;
         [SerializeField] private GameObject fansBlade;
         [SerializeField] private GameObject mountain;
-        
+
         [SerializeField] private Transform endPos;
-        
+
         private bool isFansOpen = false;
         public bool IsFansWorking => isFansOpen;
         private bool isFansTurn = false;
@@ -39,7 +39,7 @@ namespace ZhengHua
         public bool HaveFireMountain => isGotFire;
 
         private GameManager gameManager;
-        
+
         private GameObject _cloud;
         public GameObject CloudGameObject => _cloud;
         [SerializeField] private Stage_11_RightBlue stage_11_rightBlue;
@@ -56,7 +56,7 @@ namespace ZhengHua
 
             isFansOpen = false;
             isFansTurn = false;
-            
+
             // 還未拿到碎片 B 重置碎片位置。
             if (haveKey12 == false)
             {
@@ -79,15 +79,15 @@ namespace ZhengHua
                 {
                     isFansOpen = false;
                 });
-            
+
             if (this.IsLeftGreenOnCurrent && this.IsRightBlueOnCurrent)
             {
                 if (stage_11_rightBlue == null)
                     return;
-                
+
                 if (stage_11_rightBlue.CloudGameObject == null)
                     return;
-                
+
                 var cloud = stage_11_rightBlue.CloudGameObject;
                 cloud.transform.DOMoveX(cloud.transform.position.x + 5f, 1f)
                     .OnComplete(() =>
@@ -101,15 +101,15 @@ namespace ZhengHua
                             });
                     });
             }
-            
+
             if (this.IsLeftGreenOnCurrent && this.IsRightGreenOnCurrent)
             {
                 if (stage_12_rightGreen == null)
                     return;
-                
+
                 if (_cloud == null)
                     return;
-                
+
                 _cloud.transform.DOMoveX(_cloud.transform.position.x + 8f, 1f)
                     .OnComplete(() =>
                     {
@@ -126,21 +126,21 @@ namespace ZhengHua
         {
             if (isFansTurn)
                 return;
-            
+
             var toggleSequence = DOTween.Sequence();
             toggleSequence.Pause();
-            
+
             var toggleRotate = fansToggle.transform.DOLocalRotate(new Vector3(0f, 0f, -30f), 0.5f);
             toggleRotate.Pause();
             toggleSequence.Append(toggleRotate);
-            
-            
+
+
             var fansRotate = fans.transform.DOLocalRotate(new Vector3(0f, -40f, 0f), 0.5f);
             fansRotate.Pause();
             toggleSequence.Append(fansRotate);
-            
+
             isFansTurn = true;
-            
+
             var key12Show = key12.transform.DOScale(Vector3.one, 0.01f);
             key12Show.Pause();
             toggleSequence.Append(key12Show);
@@ -149,6 +149,7 @@ namespace ZhengHua
 
         public void OnKey12ObjectClick()
         {
+            /*
             var maskBGotTween = key12.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
@@ -158,6 +159,10 @@ namespace ZhengHua
                     gameManager.isMaskF_active = true;
                 }
             };
+            */
+
+            key12.gameObject.SetActive(false);
+            MaskManager.Instance.UnlockMask(MaskType.RightGreen);
         }
 
         public void GotFire()
