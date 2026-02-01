@@ -19,7 +19,21 @@ namespace ZhengHua
         private bool gotFruit = false;
         private bool isBigFire = false;
         private bool isShaked = false;
-        
+
+        public override void StageInit()
+        {
+            base.StageInit();
+
+            if (isBigFire)
+            {
+                AudioManager.Instance.PlayBGM("campfire_small_Music");
+            }
+            else
+            {
+                AudioManager.Instance.PlayBGM("campfire_Big_Music");
+            }
+        }
+
         public void GetFruit(GameObject fruit)
         {
             gotFruit = true;

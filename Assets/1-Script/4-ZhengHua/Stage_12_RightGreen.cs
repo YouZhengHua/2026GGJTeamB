@@ -45,6 +45,8 @@ namespace ZhengHua
         public override void StageInit()
         {
             base.StageInit();
+            
+            AudioManager.Instance.PlayBGM("forest_Music");
 
             if (_cloud == null)
                 return;
