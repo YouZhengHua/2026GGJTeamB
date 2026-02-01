@@ -158,7 +158,7 @@ namespace ZhengHua
             var maskBGotTween = key02.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
-                haveKey02 = true;
+                
                 if (gameManager != null)
                 {
                     gameManager.isMaskC_active = true;
@@ -166,6 +166,7 @@ namespace ZhengHua
             };
             */
             key02.gameObject.SetActive(false);
+            haveKey02 = true;
             MaskManager.Instance.UnlockMask(MaskType.LeftRed);
         }
 
@@ -175,7 +176,7 @@ namespace ZhengHua
             var maskBGotTween = key01.transform.DOMove(endPos2.position, 1f);
             maskBGotTween.onComplete = () =>
             {
-                haveKey01 = true;
+                
                 if (gameManager != null)
                 {
                     gameManager.isMaskB_active = true;
@@ -183,6 +184,7 @@ namespace ZhengHua
             };
             */
             key01.gameObject.SetActive(false);
+            haveKey01 = true;
             MaskManager.Instance.UnlockMask(MaskType.LeftBlue);
         }
 
@@ -197,6 +199,7 @@ namespace ZhengHua
                         if (this.IsLeftRedOnCurrent && fishEnd == false)
                         {
                             fishingRod.transform.DOLocalRotate(new Vector3(0f, 0f, -30f), 0.3f);
+                            
                             fish.transform.DOMove(gotPos.position, 1f)
                                 .OnComplete(() =>
                                 {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ZhengHua
 {
@@ -7,10 +8,14 @@ namespace ZhengHua
         [SerializeField] private StageManager stageManager;
         public void Show()
         {
-            stageManager?.StageInit();
             gameObject.SetActive(true);
         }
-        
+
+        private void OnEnable()
+        {
+            stageManager?.StageInit();
+        }
+
         public void Hide()
         {
             gameObject.SetActive(false);

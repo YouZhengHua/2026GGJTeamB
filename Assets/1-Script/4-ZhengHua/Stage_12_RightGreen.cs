@@ -92,13 +92,14 @@ namespace ZhengHua
             var maskBGotTween = key10.transform.DOMove(endPos.position, 1f);
             maskBGotTween.onComplete = () =>
             {
-                haveKey10 = true;
+                
                 if (gameManager != null)
                 {
                     gameManager.isMaskD_active = true;
                 }
             };
             */
+            haveKey10 = true;
             key10.gameObject.SetActive(false);
             MaskManager.Instance.UnlockMask(MaskType.RightRed);
         }
