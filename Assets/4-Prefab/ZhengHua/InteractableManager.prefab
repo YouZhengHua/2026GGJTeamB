@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423545276341836924}
   m_Layer: 0
-  m_Name: Key00_EndPos
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_EndPos"
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7812311734714422940}
   m_Layer: 0
-  m_Name: Key00_GotPos2
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_GotPos2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 5058863079565584907}
   - component: {fileID: 8598716571714345844}
   m_Layer: 0
-  m_Name: Mask10_InteractableObjectContainer
+  m_Name: "\u53F3\u7D05\u5834\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 828159650826272904}
   m_Layer: 0
-  m_Name: Mask_B_GotPos
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_GotPos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 1577476632821618036}
   - component: {fileID: 380953141991655009}
   m_Layer: 0
-  m_Name: Mask00_InteractableObjectContainer
+  m_Name: "\u5DE6\u7DA0\u5834\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7095444852756583179}
   m_Layer: 0
-  m_Name: Mask_B_EndPos
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_EndPos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8572585393811006761}
   m_Layer: 0
-  m_Name: Mask_B_StartPos
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_StartPos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335226711520799076}
   m_Layer: 0
-  m_Name: Key00_StartPos
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_StartPos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7452985859612879328}
   m_Layer: 0
-  m_Name: "\u98A8\u6247"
+  m_Name: "\u98A8\u6247\u5BB9\u5668"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 3314966086901824638}
   - component: {fileID: 6627364408349516134}
   m_Layer: 0
-  m_Name: Mask11_InteractableObjectContainer
+  m_Name: "\u53F3\u85CD\u5834\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 3791447334031567324}
   - component: {fileID: 9098561280954141440}
   m_Layer: 0
-  m_Name: Mask12_InteractableObjectContainer
+  m_Name: "\u53F3\u7DA0\u5834\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,6 +498,7 @@ MonoBehaviour:
   tree: {fileID: 8737857112509123945}
   leftFruit: {fileID: 2639774710893860952}
   rightFruit: {fileID: 7221297980804462440}
+  stage02LeftRed: {fileID: 0}
 --- !u!1 &5348233310952966291
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2976521047490253543}
   m_Layer: 0
-  m_Name: Rain
+  m_Name: "\u96E8\u6EF4\u5BB9\u5668"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,7 +596,7 @@ GameObject:
   - component: {fileID: 3216951004205354616}
   - component: {fileID: 5883555374450702638}
   m_Layer: 0
-  m_Name: Mask02_InteractableObjectContainer
+  m_Name: "\u5DE6\u7D05\u5834\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2718371442144290561}
   m_Layer: 0
-  m_Name: Key12_EndPos
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_EndPos"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,7 +732,7 @@ GameObject:
   - component: {fileID: 5350986350074565260}
   - component: {fileID: 9035180897117908310}
   m_Layer: 0
-  m_Name: Mask01_InteractableObjectContainer
+  m_Name: "\u5DE6\u85CD\u5834\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,7 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2721236412250649202}
   m_Layer: 0
-  m_Name: TreeContainer
+  m_Name: "\u677E\u6A39\u5BB9\u5668"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,7 +825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5175681136074295119}
   m_Layer: 0
-  m_Name: Key00_GotPos1
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_GotPos1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,7 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5022273972842634540}
   m_Layer: 0
-  m_Name: 'Key10_EndPos '
+  m_Name: "\u788E\u7247\u79FB\u52D5\u5EA7\u6A19_EndPos "
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: Key00
+      value: "\u5DE6\u7DA0\u788E\u7247"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: needAutoHide
@@ -1011,9 +1012,13 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u71DF\u706B"
       objectReference: {fileID: 0}
+    - target: {fileID: 2888218493012482023, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: fire
+      value: "\u71DF\u706B"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1138,9 +1143,13 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u7E69\u71C8"
       objectReference: {fileID: 0}
+    - target: {fileID: 2888218493012482023, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: LightToggle
+      value: "\u71C8\u7684\u958B\u95DC"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1291,7 +1300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Rain (1)
+      value: "\u96E8\u6EF4"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1325,7 +1334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: fishingRod
+      value: "\u9B5A\u7AFF"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1514,7 +1523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: Tree
+      value: "\u6A39"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1692,9 +1701,13 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u592A\u967D\u71C8"
       objectReference: {fileID: 0}
+    - target: {fileID: 2888218493012482023, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: SunLight
+      value: "\u592A\u967D\u71C8"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1786,6 +1799,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u767D\u96F2"
       objectReference: {fileID: 0}
+    - target: {fileID: 1067938081111820673, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 3389501483255031686, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1852,7 +1869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Cloud
+      value: "\u96F2\u6735"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1988,6 +2005,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u91D1\u5B57\u5854\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 1067938081111820673, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 3389501483255031686, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Color.b
       value: 0.1695051
@@ -2042,7 +2063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: "\u91D1\u5B57\u5854"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2078,9 +2099,13 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u53F3\u7DA0\u788E\u7247"
       objectReference: {fileID: 0}
+    - target: {fileID: 2888218493012482023, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: Key12
+      value: "\u53F3\u7DA0\u788E\u7247"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -2191,7 +2216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: treasure
+      value: "\u5927\u7955\u5BF6"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -2317,7 +2342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: rightFruit
+      value: "\u53F3\u908A\u677E\u679C"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -2444,7 +2469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: ice
+      value: "\u51B0\u5C71"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -2606,7 +2631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Rain (2)
+      value: "\u96E8\u6EF4"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2644,7 +2669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: bear
+      value: "\u5317\u6975\u718A"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -2762,7 +2787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: Key02
+      value: "\u5DE6\u7D05\u788E\u7247"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -2901,7 +2926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: FishMan
+      value: "\u6F01\u8239"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2979,7 +3004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Rain
+      value: "\u96E8\u6EF4"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3057,7 +3082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Rain (3)
+      value: "\u96E8\u6EF4"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3253,7 +3278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Background
+      value: "\u9ED1\u591C\u80CC\u666F"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3292,7 +3317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: Key10
+      value: "\u53F3\u7D05\u788E\u7247"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -3419,7 +3444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
-      value: leftFruit
+      value: "\u5DE6\u908A\u677E\u679C"
       objectReference: {fileID: 0}
     - target: {fileID: 6314784160152453048, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: onClickEvent.m_PersistentCalls.m_Calls.Array.size
@@ -3539,6 +3564,10 @@ PrefabInstance:
     - target: {fileID: 2654773600738912436, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Text
       value: "\u64CD\u4F5C\u687F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888218493012482023, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 5933581874781235084, guid: e3952e2608b3b5241abee19fdbe24723, type: 3}
       propertyPath: m_Name
@@ -3700,7 +3729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8403512581930187242, guid: 3de1164dd59070d4c9c46fa199c7197b, type: 3}
       propertyPath: m_Name
-      value: Ice
+      value: "\u51B0\u5C71"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
