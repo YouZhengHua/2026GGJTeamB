@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using Mono.CSharp;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ZhengHua
 {
@@ -27,11 +28,15 @@ namespace ZhengHua
         [SerializeField] private GameObject fansToggle;
         [SerializeField] private GameObject fans;
         [SerializeField] private GameObject fansBlade;
+        [SerializeField] private GameObject mountain;
         
         [SerializeField] private Transform endPos;
         
         private bool isFansOpen = false;
+        public bool IsFansWorking => isFansOpen;
         private bool isFansTurn = false;
+        private bool isGotFire = false;
+        public bool HaveFireMountain => isGotFire;
 
         private GameManager gameManager;
         
@@ -66,7 +71,7 @@ namespace ZhengHua
         {
             if (isFansOpen)
                 return;
-            
+            isFansOpen = true;
             var tween = fansBlade.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), 1.5f, RotateMode.FastBeyond360)
                 .SetLoops(2, LoopType.Incremental)
                 .SetEase(Ease.Linear)
@@ -153,6 +158,23 @@ namespace ZhengHua
                     gameManager.isMaskF_active = true;
                 }
             };
+        }
+
+        public void GotFire()
+        {
+            if (isGotFire)
+                return;
+
+            isGotFire = true;
+            mountain.GetComponent<SpriteRenderer>().DOColor(Color.softRed, 2f)
+                .OnPlay(() =>
+                {
+                    mountain.transform.DOShakeScale(1.5f, 0.2f, 12);
+                })
+                .OnComplete(() =>
+                {
+                    mountain.GetComponentInChildren<Text>().text = "火燒山";
+                });
         }
     }
 }
