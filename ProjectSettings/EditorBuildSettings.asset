@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/0-Scene/ani/New Scene.unity
+    guid: f7c55a9c187b98a47b138c8651c6e439
+  - enabled: 1
     path: Assets/0-Scene/Regulus/Main.unity
     guid: 17ee5c44f9c768542900d30a87e40199
   m_configObjects:

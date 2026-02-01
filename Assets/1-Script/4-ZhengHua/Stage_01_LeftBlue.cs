@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ZhengHua
 {
@@ -35,7 +36,7 @@ namespace ZhengHua
         {
             if (!_isBearOut)
                 return;
-            Debug.Log("IS END.");
+            SceneManager.LoadScene("New Scene");
         }
     }
 }
